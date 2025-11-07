@@ -30,6 +30,7 @@ function Dashboard() {
           <input type="search" required placeholder="Search by job title.." />
         </label>
       </div>
+      
       <CardJob/>
      
     </>

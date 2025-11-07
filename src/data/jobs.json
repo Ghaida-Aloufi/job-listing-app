@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "title": "Frontend Developer",
+    "company": "TechNova",
+    "location": "Riyadh",
+    "salary": "10000$"
+  },
+  {
+    "id": 2,
+    "title": "UI/UX Designer",
+    "company": "DesignHub",
+    "location": "Jeddah",
+    "salary": "13000$"
+  },
+  {
+    "id": 3,
+    "title": "Backend Developer",
+    "company": "CodeLab",
+    "location": "Dammam",
+    "salary": "15000$"
+  }
+  ,
+  {
+    "id": 4,
+    "title": "Backend Developer",
+    "company": "CodeLab",
+    "location": "Dammam",
+    "salary": "15000$"
+  },
+  {
+    "id": 5,
+    "title": "Backend Developer",
+    "company": "CodeLab",
+    "location": "Dammam",
+    "salary": "15000$"
+  },
+  {
+    "id": 6,
+    "title": "Backend Developer",
+    "company": "CodeLab",
+    "location": "Dammam",
+    "salary": "15000$"
+  }
+]
