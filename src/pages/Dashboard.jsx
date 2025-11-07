@@ -1,4 +1,5 @@
 import NavBar from "../components/NavBar";
+import CardJob from "../components/CardJob";
 function Dashboard() {
   return (
     <>
@@ -29,6 +30,8 @@ function Dashboard() {
           <input type="search" required placeholder="Search by job title.." />
         </label>
       </div>
+      <CardJob/>
+     
     </>
   );
 }
