@@ -7,7 +7,7 @@ function Dashboard() {
       <div className="flex flex-col m-30 h-[16vh] justify-between">
         <a
           href="#my_modal_8"
-          className="btn w-45 rounded-xl p-6 bg-blue-500  text-white font-semibold "
+          className="btn w-46 rounded-xl p-6 bg-blue-500  text-white font-semibold "
         >
           <span className="font-bold text-md">+</span> Add New Job
         </a>
