@@ -1,7 +1,12 @@
 import NavBar from "../components/NavBar";
 import CardJob from "../components/CardJob";
 import FormJob from "../components/FormJob";
+import jobsData from "../data/jobs.json";
+import { useState } from "react";
+
 function Dashboard() {
+  const [jobs, setJobs] = useState(jobsData);
+
   return (
     <>
       <NavBar />
@@ -35,8 +40,11 @@ function Dashboard() {
           <input type="search" placeholder="Search by job title.." />
         </label>
       </div>
-
-      <CardJob />
+      <div className="flex flex-wrap  ml-30 mr-30 justify-around gap-5 ">
+        {jobs.map((job) => (
+          <CardJob job={job} />
+        ))}
+      </div>
     </>
   );
 }

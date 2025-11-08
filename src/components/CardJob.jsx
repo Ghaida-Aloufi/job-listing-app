@@ -1,21 +1,19 @@
 import React from "react";
-import jobs from "../data/jobs.json"
 
-function CardJob() {
+function CardJob({job}) {
   return (
   
   
-  <div className="flex flex-wrap ml-30 mr-30 justify-around gap-5"> 
-      {jobs.map((e)=>
+      
   
        <div className="card flex w-96 bg-gray-100 card-xl shadow-sm">
       <div className="card-body">
        
         
-        <h2 className="card-title">{e.title}</h2>
-        <h2>Company: {e.company}</h2>
-        <h2>Location: {e.location}</h2>
-        <h2>Salary: {e.salary}</h2>
+        <h2 className="card-title">{job.title}</h2>
+        <h2>Company: {job.company}</h2>
+        <h2>Location: {job.location}</h2>
+        <h2>Salary: {job.salary}</h2>
        
         
 
@@ -24,8 +22,8 @@ function CardJob() {
         </div>
       </div>
       </div>
-   )} 
-</div>
+
+
    
   );
 }
