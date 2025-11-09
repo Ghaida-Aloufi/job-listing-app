@@ -2,6 +2,7 @@ import NavBar from "../components/NavBar";
 import CardJob from "../components/CardJob";
 import FormJob from "../components/FormJob";
 import jobsData from "../data/jobs.json";
+import DetailsJob from "../components/DetailsJob";
 import { useState } from "react";
 
 function Dashboard() {
@@ -9,7 +10,7 @@ function Dashboard() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleAddJob = (newJob) => {
-    setJobs([...jobs, { ...newJob }]);
+    setJobs([...jobs, {id: jobs.length + 1, ...newJob }]);
     setIsOpen(false);
   };
   return (
@@ -51,6 +52,12 @@ function Dashboard() {
           <CardJob job={job} />
         ))}
       </div>
+      <div >
+        {jobs.map((job) => (
+          <DetailsJob  job={job} />
+        ))}
+      </div>
+   
     </>
   );
 }

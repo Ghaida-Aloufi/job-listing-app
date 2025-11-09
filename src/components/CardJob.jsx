@@ -10,7 +10,7 @@ function CardJob({ job }) {
         <h2>Salary: {job.salary}</h2>
 
         <div className="justify-end card-actions">
-          <button className="btn btn-primary">Details</button>
+          <a href={`#Details${job.id}`}  className="btn btn-primary">Details</a>
         </div>
       </div>
     </div>
