@@ -6,20 +6,26 @@ import { useState } from "react";
 
 function Dashboard() {
   const [jobs, setJobs] = useState(jobsData);
+  const [isOpen, setIsOpen] = useState(false);
 
+  const handleAddJob = (newJob) => {
+    setJobs([...jobs, { ...newJob }]);
+    setIsOpen(false);
+  };
   return (
     <>
       <NavBar />
       <div className="flex flex-col m-30 h-[16vh] justify-between">
         <a
-          href="#my_modal_8"
+          onClick={() => setIsOpen(true)}
+          href="#Form"
           className="btn w-46 rounded-xl p-6 bg-blue-500  text-white font-semibold "
         >
           <span className="font-bold text-md">+</span> Add New Job
         </a>
-
-        <FormJob />
-
+        {isOpen && (
+          <FormJob onAddJob={handleAddJob} onClose={() => setIsOpen(false)} />
+        )}
         <label className="input w-full rounded-xl h-12 ">
           <svg
             className="h-[1em] opacity-50"
