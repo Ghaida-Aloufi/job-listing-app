@@ -4,42 +4,107 @@
     "title": "Frontend Developer",
     "company": "TechNova",
     "location": "Riyadh",
-    "salary": "10000$"
+    "salary": "10000$",
+    "description": "We are looking for a skilled Frontend Developer to join our dynamic team. You will be responsible for building responsive web applications, translating UI/UX designs into code, optimizing performance, and collaborating closely with backend developers and designers.",
+    "jobType": "Full-time",
+    "experience": "2-3 years in frontend development",
+    "postedDate": "2025-11-01",
+    "closingDate": "2025-12-01"
   },
   {
     "id": 2,
-    "title": "UI/UX Designer",
-    "company": "DesignHub",
+    "title": "Backend Developer",
+    "company": "CodeSphere",
     "location": "Jeddah",
-    "salary": "13000$"
+    "salary": "12000$",
+    "description": "Seeking a Backend Developer experienced in Node.js and databases. You will design APIs, manage server-side logic, and ensure high performance and responsiveness of applications.",
+    "jobType": "Full-time",
+    "experience": "3-5 years in backend development",
+    "postedDate": "2025-10-28",
+    "closingDate": "2025-12-05"
   },
   {
     "id": 3,
-    "title": "Backend Developer",
-    "company": "CodeLab",
+    "title": "UI/UX Designer",
+    "company": "DesignHub",
     "location": "Dammam",
-    "salary": "15000$"
-  }
-  ,
+    "salary": "9000$",
+    "description": "Looking for a creative UI/UX Designer to craft intuitive and engaging user interfaces. Collaborate with frontend developers to implement design systems and optimize user experience.",
+    "jobType": "Full-time",
+    "experience": "2+ years in UI/UX design",
+    "postedDate": "2025-10-25",
+    "closingDate": "2025-11-30"
+  },
   {
     "id": 4,
-    "title": "Backend Developer",
-    "company": "CodeLab",
-    "location": "Dammam",
-    "salary": "15000$"
+    "title": "Full Stack Developer",
+    "company": "WebWorks",
+    "location": "Riyadh",
+    "salary": "15000$",
+    "description": "Join our team as a Full Stack Developer. Work on both frontend and backend tasks, integrate APIs, and ensure seamless functionality across all platforms.",
+    "jobType": "Full-time",
+    "experience": "3+ years in full stack development",
+    "postedDate": "2025-11-03",
+    "closingDate": "2025-12-10"
   },
   {
     "id": 5,
-    "title": "Backend Developer",
-    "company": "CodeLab",
-    "location": "Dammam",
-    "salary": "15000$"
+    "title": "Mobile App Developer",
+    "company": "Appify",
+    "location": "Jeddah",
+    "salary": "11000$",
+    "description": "Develop high-quality mobile applications for iOS and Android. Collaborate with designers and backend developers to deliver smooth and responsive apps.",
+    "jobType": "Full-time",
+    "experience": "2-4 years in mobile app development",
+    "postedDate": "2025-11-02",
+    "closingDate": "2025-12-08"
   },
   {
     "id": 6,
-    "title": "Backend Developer",
-    "company": "CodeLab",
+    "title": "Data Analyst",
+    "company": "DataMind",
     "location": "Dammam",
-    "salary": "15000$"
+    "salary": "9500$",
+    "description": "Analyze datasets to extract insights and support business decisions. Create visualizations and reports to communicate findings effectively to stakeholders.",
+    "jobType": "Full-time",
+    "experience": "2+ years in data analysis",
+    "postedDate": "2025-10-30",
+    "closingDate": "2025-12-01"
+  },
+  {
+    "id": 7,
+    "title": "DevOps Engineer",
+    "company": "CloudTech",
+    "location": "Riyadh",
+    "salary": "14000$",
+    "description": "Responsible for automating deployment processes, maintaining cloud infrastructure, and ensuring high availability of applications and services.",
+    "jobType": "Full-time",
+    "experience": "3+ years in DevOps or system administration",
+    "postedDate": "2025-10-27",
+    "closingDate": "2025-12-05"
+  },
+  {
+    "id": 8,
+    "title": "QA Engineer",
+    "company": "TestPro",
+    "location": "Jeddah",
+    "salary": "9000$",
+    "description": "Perform manual and automated testing of web and mobile applications. Report bugs, verify fixes, and ensure product quality before release.",
+    "jobType": "Full-time",
+    "experience": "2+ years in QA testing",
+    "postedDate": "2025-11-01",
+    "closingDate": "2025-12-07"
+  },
+  {
+    "id": 9,
+    "title": "Cybersecurity Specialist",
+    "company": "SecureNet",
+    "location": "Riyadh",
+    "salary": "16000$",
+    "description": "Protect company systems and data from cyber threats. Monitor security alerts, implement security policies, and conduct vulnerability assessments.",
+    "jobType": "Full-time",
+    "experience": "3+ years in cybersecurity",
+    "postedDate": "2025-10-29",
+    "closingDate": "2025-12-12"
   }
 ]

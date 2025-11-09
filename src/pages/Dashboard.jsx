@@ -57,6 +57,8 @@ function Dashboard() {
           <DetailsJob  job={job} />
         ))}
       </div>
+
+      <footer className="bg-sky-50 text-center font-semibold mt-10 p-5">© 2025 Ghaida Aloufi. All rights reserved.</footer>
    
     </>
   );
