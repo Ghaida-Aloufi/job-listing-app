@@ -9,10 +9,12 @@ function Dashboard() {
   const [jobs, setJobs] = useState(jobsData);
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState("");
-
+  const [minSalary, setMinSalary] = useState("");
+  const [maxSalary, setMaxSalary] = useState("");
+  const [location, setLocation] = useState("");
 
   const handleAddJob = (newJob) => {
-    setJobs([...jobs, {id: jobs.length + 1, ...newJob }]);
+    setJobs([...jobs, { id: jobs.length + 1, ...newJob }]);
     setIsOpen(false);
   };
   return (
@@ -20,35 +22,39 @@ function Dashboard() {
       <NavBar />
 
       <div className=" h-[90vh] flex  justify-around items-center border-b-2  border-gray-200 ">
-      <div className=" rounded-b-[5vh] flex flex-col justify-center items-center gap-3 ">
-
-        <h1 className="font-bold text-4xl ">Find Your Dream Job Today..</h1>
-        <h2>Explore thousands of opportunities that match your skills and passion.</h2>
-  <label className="input w-[70%]  rounded-xl h-12  border-[#3389c2]">
-          <svg
-            className="h-[1em] opacity-50"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <g
-              strokeLinejoin="round"
-              strokeLinecap="round"
-              strokeWidth="2.5"
-              fill="none"
-              stroke="currentColor"
+        <div className=" rounded-b-[5vh] flex flex-col justify-center items-center gap-3 ">
+          <h1 className="font-bold text-4xl ">Find Your Dream Job Today..</h1>
+          <h2>
+            Explore thousands of opportunities that match your skills and
+            passion.
+          </h2>
+          <label className="input w-[70%]  rounded-xl h-12  border-[#3389c2]">
+            <svg
+              className="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
             >
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.3-4.3"></path>
-            </g>
-          </svg>
-          <input type="search" onChange={(e) => setSearch(e.target.value)}  placeholder="Search by job title.." />
-        </label>
-
+              <g
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input
+              type="search"
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search by job title.."
+            />
+          </label>
+        </div>
+        <img src="../src/assets/img.jpg" className="w-[36%]" alt="" />
       </div>
-                      <img src="../src/assets/img.jpg" className="w-[36%]" alt="" />
-
-      </div>
-      <div className="flex flex-col m-5 sm:m-10 md:ml-15 md:mr-15  justify-between ">
+      <div className="flex  m-5 sm:m-10 md:ml-15 md:mr-15  justify-between ">
         <a
           onClick={() => setIsOpen(true)}
           href="#Form"
@@ -56,24 +62,73 @@ function Dashboard() {
         >
           <span className="font-bold text-md">+</span> Add New Job
         </a>
+
         {isOpen && (
           <FormJob onAddJob={handleAddJob} onClose={() => setIsOpen(false)} />
         )}
-      
       </div>
+
+      <div className="flex flex-col border-gray-200 mb-7 border-2 p-7 ml-15 mr-15">
+        <h1 className="font-bold text-2xl mb-3">Filter</h1>
+        <div className="flex justify-around  ">
+          <div className="flex flex-col gap-2 w-full">
+            <h2>Min Salary</h2>
+            <label className="input  rounded-xl h-12  border-[#3389c2]">
+              <input
+                type="number"
+                value={minSalary}
+                onChange={(e) => setMinSalary(e.target.value)}
+                placeholder="Min Salary"
+              />
+            </label>
+          </div>
+          <div className="flex flex-col gap-2 w-full">
+            <h2>Max Salary</h2>
+            <label className="input  rounded-xl h-12  border-[#3389c2]">
+              <input
+                type="number"
+                value={maxSalary}
+                onChange={(e) => setMaxSalary(e.target.value)}
+                placeholder="Max Salary"
+              />
+            </label>
+          </div>
+
+          <div className="flex flex-col gap-2 w-full">
+            <h2>Location</h2>
+            <label className="input   rounded-xl h-12  border-[#3389c2]">
+              <input
+                type="text"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                placeholder="Location"
+              />
+            </label>
+          </div>
+        </div>
+      </div>
+
       <div className="grid  grid-cols-1 lg:grid-cols-3 sm:grid-cols-2  gap-6 md:ml-15 md:mr-15 ml-5 mr-5 sm:ml-10 sm:mr-10 justify-around  ">
-        {jobs.filter((job) => job.title.toLowerCase().includes(search.toLowerCase())).map((job) => (
-          <CardJob job={job} />
-        ))}
+        {jobs
+          .filter(
+            (job) =>
+              job.title.toLowerCase().includes(search.toLowerCase()) &&
+              (minSalary === "" || job.salary >= minSalary) &&
+              (maxSalary === "" || job.salary <= maxSalary) &&
+              (location === ""  ||  job.location.toLowerCase().includes(location.toLowerCase()))
+          ).map((job) => (
+            <CardJob job={job} />
+          ))}
       </div>
-      <div >
+      <div>
         {jobs.map((job) => (
-          <DetailsJob  job={job} />
+          <DetailsJob job={job} />
         ))}
       </div>
 
-      <footer className="bg-sky-50 text-center font-semibold mt-20 p-5">© 2025 Ghaida Aloufi. All rights reserved.</footer>
-   
+      <footer className="bg-sky-50 text-center font-semibold mt-20 p-5">
+        © 2025 Ghaida Aloufi. All rights reserved.
+      </footer>
     </>
   );
 }
