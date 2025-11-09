@@ -21,10 +21,12 @@ function Dashboard() {
     <>
       <NavBar />
 
-      <div className=" h-[90vh] flex  justify-around items-center border-b-2  border-gray-200 ">
-        <div className=" rounded-b-[5vh] flex flex-col justify-center items-center gap-3 ">
-          <h1 className="font-bold text-4xl ">Find Your Dream Job Today..</h1>
-          <h2>
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between border-b-2 border-gray-200 h-auto md:h-[75vh] p-6 md:p-12 lg:p-20 gap-10">
+        <div className=" rounded-b-[5vh] flex flex-col justify-center items-center ">
+          <h1 className="font-bold lg:text-4xl text-center text-2xl">
+            Find Your Dream Job Today..
+          </h1>
+          <h2 className="text-center p-5">
             Explore thousands of opportunities that match your skills and
             passion.
           </h2>
@@ -52,7 +54,10 @@ function Dashboard() {
             />
           </label>
         </div>
-        <img src="../src/assets/img.jpg" className="w-[36%]" alt="" />
+        <img
+          src="../src/assets/img.jpg"
+          className="w-[85%] sm:w-[60%] md:w-[45%] lg:w-[40%] rounded-2xl object-cover"
+        />
       </div>
       <div className="flex  m-5 sm:m-10 md:ml-15 md:mr-15  justify-between ">
         <a
@@ -68,9 +73,9 @@ function Dashboard() {
         )}
       </div>
 
-      <div className="flex flex-col border-gray-200 mb-7 border-2 p-7 ml-15 mr-15">
+      <div className="flex flex-col border-gray-200 mb-7 border-2 m-5 sm:m-10 md:m-15  p-7 lg:ml-15 lg:mr-15">
         <h1 className="font-bold text-2xl mb-3">Filter</h1>
-        <div className="flex justify-around  ">
+        <div className="flex flex-col lg:flex-row justify-around  ">
           <div className="flex flex-col gap-2 w-full">
             <h2>Min Salary</h2>
             <label className="input  rounded-xl h-12  border-[#3389c2]">
@@ -115,8 +120,10 @@ function Dashboard() {
               job.title.toLowerCase().includes(search.toLowerCase()) &&
               (minSalary === "" || job.salary >= minSalary) &&
               (maxSalary === "" || job.salary <= maxSalary) &&
-              (location === ""  ||  job.location.toLowerCase().includes(location.toLowerCase()))
-          ).map((job) => (
+              (location === "" ||
+                job.location.toLowerCase().includes(location.toLowerCase()))
+          )
+          .map((job) => (
             <CardJob job={job} />
           ))}
       </div>
