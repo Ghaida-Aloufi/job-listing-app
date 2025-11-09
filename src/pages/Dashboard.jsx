@@ -23,14 +23,14 @@ function Dashboard() {
 
       <div className="flex flex-col-reverse md:flex-row items-center justify-between border-b-2 border-gray-200 h-auto md:h-[75vh] p-6 md:p-12 lg:p-20 gap-10">
         <div className=" rounded-b-[5vh] flex flex-col justify-center items-center ">
-          <h1 className="font-bold lg:text-4xl text-center text-2xl">
+          <h1 className="font-bold lg:text-5xl text-center text-2xl text-[#3389c2]">
             Find Your Dream Job Today..
           </h1>
-          <h2 className="text-center p-5">
+          <h2 className="text-center p-5 text-md font-bold">
             Explore thousands of opportunities that match your skills and
             passion.
           </h2>
-          <label className="input w-[70%]  rounded-xl h-12  border-[#3389c2]">
+          <label className="input w-[60%] mt-6 rounded-xl h-12  border-[#3389c2]">
             <svg
               className="h-[1em] opacity-50"
               xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +73,7 @@ function Dashboard() {
         )}
       </div>
 
-      <div className="flex flex-col border-gray-200 mb-7 border-2 m-5 sm:m-10 md:m-15  p-7 lg:ml-15 lg:mr-15">
+      <div className="flex flex-col border-gray-200 rounded-md mb-7 border-2 m-5 sm:m-10 md:m-15  p-7 lg:ml-15 lg:mr-15">
         <h1 className="font-bold text-2xl mb-3">Filter</h1>
         <div className="flex flex-col lg:flex-row justify-around  ">
           <div className="flex flex-col gap-2 w-full">

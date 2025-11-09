@@ -19,7 +19,7 @@ function NavBar() {
               role="button"
               className="btn btn-ghost btn-circle avatar"
             >
-              <div className=" bg-gray-300 border-2 rounded-full">
+              <div className=" bg-gray-300 border rounded-full">
                  <img
                   alt="Tailwind CSS Navbar component"
                   src="../src/assets/avatar.png"

@@ -7,6 +7,13 @@ function FormJob({ onAddJob }) {
     company: "",
     location: "",
     salary: "",
+    description:"",
+    jobType:"",
+    experience:"",
+    postedDate:"",
+    closingDate:""
+
+
   });
 
   function handleChange(e) {
@@ -19,7 +26,7 @@ function FormJob({ onAddJob }) {
   function handleSubmit(e) {
     e.preventDefault();
     onAddJob(form);
-    setForm({ title: "", company: "", location: "", salary: "" });
+    setForm({ title: "", company: "", location: "", salary: "", description: "" ,jobType:"",experience:"",postedDate:"",closingDate:""    });
   }
   return (
     <form onSubmit={handleSubmit}>
@@ -66,6 +73,65 @@ function FormJob({ onAddJob }) {
               className="input w-full"
               name="salary"
               value={form.salary}
+              onChange={handleChange}
+              placeholder="Type here"
+            />
+          </fieldset>
+                    <fieldset className="fieldset">
+            <label className="font-bold text-md">Description</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="description"
+              value={form.description}
+              onChange={handleChange}
+              placeholder="Type here"
+            />
+          </fieldset>
+ 
+                    <fieldset className="fieldset">
+            <label className="font-bold text-md">JobType</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="jobType"
+              value={form.jobType}
+              onChange={handleChange}
+              placeholder="Type here"
+            />
+          </fieldset>
+
+           <fieldset className="fieldset">
+            <label className="font-bold text-md">Experience</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="experience"
+              value={form.experience}
+              onChange={handleChange}
+              placeholder="Type here"
+            />
+          </fieldset>
+
+           <fieldset className="fieldset">
+            <label className="font-bold text-md">PostedDate</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="postedDate"
+              value={form.postedDate}
+              onChange={handleChange}
+              placeholder="Type here"
+            />
+          </fieldset>
+
+           <fieldset className="fieldset">
+            <label className="font-bold text-md">ClosingDate</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="closingDate"
+              value={form.closingDate}
               onChange={handleChange}
               placeholder="Type here"
             />
