@@ -8,6 +8,8 @@ import { useState } from "react";
 function Dashboard() {
   const [jobs, setJobs] = useState(jobsData);
   const [isOpen, setIsOpen] = useState(false);
+  const [search, setSearch] = useState("");
+
 
   const handleAddJob = (newJob) => {
     setJobs([...jobs, {id: jobs.length + 1, ...newJob }]);
@@ -16,18 +18,13 @@ function Dashboard() {
   return (
     <>
       <NavBar />
-      <div className="flex flex-col m-5 sm:m-10 md:ml-15 md:mr-15 mb-7 h-[16vh] justify-between">
-        <a
-          onClick={() => setIsOpen(true)}
-          href="#Form"
-          className="btn w-35 sm:w-46 rounded-xl p-6 mt-4 mb-3 bg-blue-500  text-white font-semibold "
-        >
-          <span className="font-bold text-md">+</span> Add New Job
-        </a>
-        {isOpen && (
-          <FormJob onAddJob={handleAddJob} onClose={() => setIsOpen(false)} />
-        )}
-        <label className="input w-full rounded-xl h-12 ">
+
+      <div className=" h-[90vh] flex  justify-around items-center border-b-2  border-gray-200 ">
+      <div className=" rounded-b-[5vh] flex flex-col justify-center items-center gap-3 ">
+
+        <h1 className="font-bold text-4xl ">Find Your Dream Job Today..</h1>
+        <h2>Explore thousands of opportunities that match your skills and passion.</h2>
+  <label className="input w-[70%]  rounded-xl h-12  border-[#3389c2]">
           <svg
             className="h-[1em] opacity-50"
             xmlns="http://www.w3.org/2000/svg"
@@ -44,11 +41,28 @@ function Dashboard() {
               <path d="m21 21-4.3-4.3"></path>
             </g>
           </svg>
-          <input type="search" placeholder="Search by job title.." />
+          <input type="search" onChange={(e) => setSearch(e.target.value)}  placeholder="Search by job title.." />
         </label>
+
       </div>
-      <div className="grid  grid-cols-1 lg:grid-cols-3 sm:grid-cols-2  gap-4 md:ml-15 md:mr-15 ml-5 mr-5 sm:ml-10 sm:mr-10 justify-around  ">
-        {jobs.map((job) => (
+                      <img src="../src/assets/img.jpg" className="w-[36%]" alt="" />
+
+      </div>
+      <div className="flex flex-col m-5 sm:m-10 md:ml-15 md:mr-15  justify-between ">
+        <a
+          onClick={() => setIsOpen(true)}
+          href="#Form"
+          className="btn w-35 sm:w-46 rounded-xl p-6 bg-[#3389c2]  text-white font-semibold "
+        >
+          <span className="font-bold text-md">+</span> Add New Job
+        </a>
+        {isOpen && (
+          <FormJob onAddJob={handleAddJob} onClose={() => setIsOpen(false)} />
+        )}
+      
+      </div>
+      <div className="grid  grid-cols-1 lg:grid-cols-3 sm:grid-cols-2  gap-6 md:ml-15 md:mr-15 ml-5 mr-5 sm:ml-10 sm:mr-10 justify-around  ">
+        {jobs.filter((job) => job.title.toLowerCase().includes(search.toLowerCase())).map((job) => (
           <CardJob job={job} />
         ))}
       </div>
@@ -58,7 +72,7 @@ function Dashboard() {
         ))}
       </div>
 
-      <footer className="bg-sky-50 text-center font-semibold mt-10 p-5">© 2025 Ghaida Aloufi. All rights reserved.</footer>
+      <footer className="bg-sky-50 text-center font-semibold mt-20 p-5">© 2025 Ghaida Aloufi. All rights reserved.</footer>
    
     </>
   );
