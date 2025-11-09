@@ -16,11 +16,11 @@ function Dashboard() {
   return (
     <>
       <NavBar />
-      <div className="flex flex-col m-30 h-[16vh] justify-between">
+      <div className="flex flex-col m-5 sm:m-10 md:ml-15 md:mr-15 mb-7 h-[16vh] justify-between">
         <a
           onClick={() => setIsOpen(true)}
           href="#Form"
-          className="btn w-46 rounded-xl p-6 bg-blue-500  text-white font-semibold "
+          className="btn w-35 sm:w-46 rounded-xl p-6 mt-4 mb-3 bg-blue-500  text-white font-semibold "
         >
           <span className="font-bold text-md">+</span> Add New Job
         </a>
@@ -47,7 +47,7 @@ function Dashboard() {
           <input type="search" placeholder="Search by job title.." />
         </label>
       </div>
-      <div className="flex flex-wrap  ml-30 mr-30 justify-around gap-5 ">
+      <div className="grid  grid-cols-1 lg:grid-cols-3 sm:grid-cols-2  gap-4 md:ml-15 md:mr-15 ml-5 mr-5 sm:ml-10 sm:mr-10 justify-around  ">
         {jobs.map((job) => (
           <CardJob job={job} />
         ))}

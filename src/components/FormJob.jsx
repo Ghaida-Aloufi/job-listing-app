@@ -24,7 +24,7 @@ function FormJob({ onAddJob }) {
   return (
     <form onSubmit={handleSubmit}>
       <div className="modal" role="dialog" id="Form">
-        <div className="modal-box h-[70%] p-12 flex flex-col gap-3">
+        <div className="modal-box h-[55%] sm:h-[70%] p-6 sm:p-12 flex flex-col gap-3">
           <h3 className="text-lg font-bold">Add New Job</h3>
           <fieldset className="fieldset">
             <label className="font-bold text-md">Title</label>
