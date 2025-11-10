@@ -49,6 +49,8 @@ Start the development server:
 
 - `npm run dev`
 
+## ireframes & Sketches
+![A picture of dashboard page](./src/assets/Sketches.jpeg)
 
 ## Screenshots
 ## Dashboard Page
