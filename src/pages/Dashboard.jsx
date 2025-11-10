@@ -19,7 +19,11 @@ function Dashboard() {
   };
   return (
     <>
+          {/* NavBar Section */}
+
       <NavBar />
+
+          {/* Banner Section */}
 
       <div className="flex flex-col-reverse md:flex-row items-center justify-between border-b-2 border-gray-200 h-auto md:h-[75vh] p-6 md:p-12 lg:p-20 gap-10">
         <div className=" rounded-b-[5vh] flex flex-col justify-center items-center ">
@@ -59,6 +63,9 @@ function Dashboard() {
           className="w-[85%] sm:w-[60%] md:w-[45%] lg:w-[40%] rounded-2xl object-cover"
         />
       </div>
+
+          {/* New job button */}
+
       <div className="flex  m-5 sm:m-10 md:ml-15 md:mr-15  justify-between ">
         <a
           onClick={() => setIsOpen(true)}
@@ -68,10 +75,14 @@ function Dashboard() {
           <span className="font-bold text-md">+</span> Add New Job
         </a>
 
+        {/* View job form */}
+
         {isOpen && (
           <FormJob onAddJob={handleAddJob} onClose={() => setIsOpen(false)} />
         )}
       </div>
+
+          {/* Filter Section */}
 
       <div className="flex flex-col border-gray-200 rounded-md mb-7 border-2 m-5 sm:m-10 md:m-15  p-7 lg:ml-15 lg:mr-15">
         <h1 className="font-bold text-2xl mb-3">Filter</h1>
@@ -113,6 +124,8 @@ function Dashboard() {
         </div>
       </div>
 
+         {/* Csrds Section */}
+
       <div className="grid  grid-cols-1 lg:grid-cols-3 sm:grid-cols-2  gap-6 md:ml-15 md:mr-15 ml-5 mr-5 sm:ml-10 sm:mr-10 justify-around  ">
         {jobs
           .filter(
@@ -127,15 +140,21 @@ function Dashboard() {
             <CardJob job={job} />
           ))}
       </div>
+
+         {/* View job details model */}
+
       <div>
         {jobs.map((job) => (
           <DetailsJob job={job} />
         ))}
       </div>
 
+         {/* Footer Section */}
+
       <footer className="bg-sky-50 text-center font-semibold mt-20 p-5">
         © 2025 Ghaida Aloufi. All rights reserved.
       </footer>
+
     </>
   );
 }
